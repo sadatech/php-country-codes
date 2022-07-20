@@ -56,4 +56,12 @@ class CountryCode
         }
         return $_TEMP;
     }
+
+    public static function GetDetailFromIP($ip)
+    {
+        $data = file_get_contents('https://ipwhois.app/json/'.$ip);
+        $data = json_decode($data);
+
+        return $data;
+    }
 }
